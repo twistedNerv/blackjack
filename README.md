@@ -1,7 +1,7 @@
 # Blackjack trainer
 
 Roadmap:
-- gameplay
+- gameplay (hit, stand, double, split)
 - balance, user bets,...
 - real-time basic strategy check
 - real-time card counting check
