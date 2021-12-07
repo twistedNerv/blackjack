@@ -340,6 +340,8 @@ table td {
     height: 200px;
     width: 138px;
     background-size: cover;
+    top:20px;
+    border-radius:7px;
 }
 .the-card img {
     max-width: 120px;

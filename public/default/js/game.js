@@ -25,7 +25,6 @@ $(document).ready(function () {
     
     $("#stand-button").on('click', function () {
        table_id = $("#gametable_id").val();
-       console.log("test");
        $.ajax({
             type: 'GET',
             url: URL + 'gameApi/stand/' + table_id,
@@ -80,6 +79,7 @@ function newRound() {
              loader('off');
              if (result[1][0] == 'blackjack') {
                  alert("Blackjack!");
+                 newRound();
              }
          }
     });
