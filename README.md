@@ -6,3 +6,6 @@ Roadmap:
 - real-time basic strategy check
 - real-time car counting check
 - users progress statistics
+
+--------------------------------------------------------
+Work in progress - not yet installable
