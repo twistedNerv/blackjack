@@ -1,6 +1,7 @@
 # Blackjack trainer
 
 Roadmap:
+- prepare Flying-fw
 - set-up/edit playing tables
 - gameplay (hit, stand, double, split)
 - balance (betting calculations)
