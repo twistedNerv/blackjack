@@ -1,0 +1,2 @@
+# blackjack
+Blackjack count trainer
