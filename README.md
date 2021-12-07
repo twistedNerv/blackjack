@@ -11,4 +11,4 @@ Roadmap:
 - user progress statistics
 
 --------------------------------------------------------
-*Work in progress - not yet installable*
+**Work in progress - not yet installable**
