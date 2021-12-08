@@ -15,6 +15,7 @@ class gameController extends controller {
             
             $this->view->assign('gametable_id', $gametable);
             $this->view->assign('game_id', $game);
+            $this->view->assign('active_user', $this->session->get('activeUser'));
             $this->view->render('game/main');
         }
     }

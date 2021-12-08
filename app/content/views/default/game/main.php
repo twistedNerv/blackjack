@@ -22,6 +22,9 @@
             </div>
         </div>
         <div class="col-sm-3 text-right" id="info-area">
+            <div class='balance-area' style="background-color:grey;">
+                Balance: <span class="balance-display"><?=$data['active_user']['balance']?></span>
+            </div>
             <div class='stats-area' style="background-color:grey;">
                 Here be stats
             </div>

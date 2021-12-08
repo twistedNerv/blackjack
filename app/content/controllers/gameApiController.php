@@ -8,6 +8,7 @@ class gameApiController extends controller {
 
     public function displayAction() {
         echo "<pre>";
+        var_dump($this->session->get('activeUser'));
         //var_dump($this->session->get('activeDeck'));
         var_dump($this->session->get('hand'));
     }
@@ -63,8 +64,8 @@ class gameApiController extends controller {
             ]
         ];
         $this->session->set('hand', $hand);
-        $result[0][0] = $this->prepareCardHtml('dealer', 1, 'back_black.png');
-        $result[0][0] .= $this->prepareCardHtml('dealer', 0, $hand['active']['dealer'][0]->image);
+        $result[0][0] = $this->prepareCardHtml('dealer', 0, $hand['active']['dealer'][0]->image);
+        $result[0][0] .= $this->prepareCardHtml('dealer', 1, 'back_black.png');
         $result[0][1] = $this->prepareCardHtml('player', 0, $hand['active']['player'][0]->image);
         $result[0][1] .= $this->prepareCardHtml('player', 1, $hand['active']['player'][1]->image);
         $result[1][0] = $this->checkWinner(true);
@@ -181,8 +182,14 @@ class gameApiController extends controller {
         return $result;
     }
 
-    private function updateUserBalance($way = 'inc', $amount = 0) {
-        
+    private function updateUserBalance($amount) {
+        $active_user = $this->session->get('activeUser');
+        $active_user['balance'] += $amount;
+        $userModel = $this->loadModel('user');
+        $userModel->setBalance($active_user['balance']);
+        $userModel->flush();
+        $this->session->set('activeUser', $active_user);
+        $this->tools->log("gameApi", "User balance update. Amount: $amount - new value: " . $active_user['balance']);
     }
 
 }
