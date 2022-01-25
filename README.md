@@ -12,3 +12,6 @@ Roadmap:
 
 --------------------------------------------------------
 **Work in progress - not yet installable**
+
+![image](https://user-images.githubusercontent.com/5045860/150983050-6c37cdbb-f780-4dd2-b705-f4ff54fdb915.png)
+(milestone img)
