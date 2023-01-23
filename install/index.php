@@ -109,7 +109,9 @@ $" . "mainSettings = [
     }
 }
 //var_dump($_SESSION[$mainSettings['APP_NAME'] . '_activeUser']);
-if ($mainSettings['PUBLIC_SETTINGS'] || (isset($_SESSION[$mainSettings['APP_NAME'] . '_activeUser']) && $_SESSION[$mainSettings['APP_NAME'] . '_activeUser']['level'] == 5)) {
+$mainAettingsArray = json_decode($_SESSION[$mainSettings['APP_NAME'] . '_activeUser'], true);
+if ($mainSettings['PUBLIC_SETTINGS'] || (isset($_SESSION[$mainSettings['APP_NAME'] . '_activeUser']) 
+    && $mainAettingsArray['level'] == 5)) {
     $obj = new installer();
     $obj->run();
 } else {
